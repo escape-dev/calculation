@@ -14,6 +14,8 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 
+gem "devise", "~> 4.9"
+
 gem "jbuilder"
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
