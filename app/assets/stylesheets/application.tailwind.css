@@ -22,7 +22,7 @@
   }
 
   .form-control {
-    @apply border-slate-500 rounded-xl;
+    @apply w-full border-slate-500 rounded-xl;
   }
 }
 

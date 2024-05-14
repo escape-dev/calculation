@@ -1,9 +1,13 @@
-<div class="p-6 shadow-2xl rounded-xl space-y-4">
+<div class="p-6 shadow-2xl rounded-xl space-y-4 w-96">
   <h1 class="font-semibold text-center text-3xl">Log In</h1>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <% if flash[:alert] %>
       <p class="card bg-red-200 border-red-600 text-sm text-center text-red-600"><%= flash[:alert] %></p>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <p class="card bg-blue-200 border border-blue-600 text-sm text-center text-blue-600"><%= flash[:notice] %></p>
     <% end %>
 
     <div class="mt-4 space-y-4">
