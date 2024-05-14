@@ -2,12 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+
 
 @layer components {
+  .card {
+    @apply p-4 rounded-xl;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-xl text-white
+  }
+
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply btn bg-blue-500;
+  }
+
+  .btn-warning {
+    @apply btn bg-orange-500
+  }
+
+  .form-control {
+    @apply border-slate-500 rounded-xl;
   }
 }
 
-*/
+
