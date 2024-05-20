@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   
-  # root "posts#index"
+  root "welcome#index"
+
+  get "/home", to: "home#index", as: :homepage
 end

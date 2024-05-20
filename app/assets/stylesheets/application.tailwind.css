@@ -21,6 +21,10 @@
     @apply btn bg-orange-500
   }
 
+  .btn-danger {
+    @apply btn bg-red-500
+  }
+
   .form-control {
     @apply w-full border-slate-500 rounded-xl;
   }
