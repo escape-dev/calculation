@@ -1,16 +1,23 @@
-<h2>Forgot your password?</h2>
+<div class="p-6 shadow-2xl rounded-xl space-y-4 w-96">
+  <h1 class="font-semibold text-center text-3xl">Forgot your password?</h1>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <% if flash[:alert] %>
+      <p class="card bg-red-200 border-red-600 text-sm text-center text-red-600"><%= flash[:alert] %></p>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <% if flash[:notice] %>
+      <p class="card bg-blue-200 border border-blue-600 text-sm text-center text-blue-600"><%= flash[:notice] %></p>
+    <% end %>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control #{resource.errors[:email].any? ? 'border-red-500' : ''}" %>
+      <% if resource.errors[:email].any? %>
+        <p class="text-sm text-red-500 mt-1"><%= resource.errors[:email].first %></p>
+      <% end %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <%= f.submit "Send me reset password instructions", class: "btn-primary w-full mt-6" %>
+  <% end %>
+</div>
