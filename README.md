@@ -1,3 +1,3 @@
 # So uhhh....
 
-# Basically this is a very simple calculation for income or expenses website
+# Basically this is a very simple calculation for income or expenses website, nice
