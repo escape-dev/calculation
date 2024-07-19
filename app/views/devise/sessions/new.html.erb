@@ -3,35 +3,37 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <% if flash[:alert] %>
-      <p class="card bg-red-200 border-red-600 text-sm text-center text-red-600"><%= flash[:alert] %></p>
+      <p class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+        <%= flash[:alert] %>
+      </p>
     <% end %>
 
     <% if flash[:notice] %>
-      <p class="card bg-blue-200 border border-blue-600 text-sm text-center text-blue-600"><%= flash[:notice] %></p>
+      <p class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"><%= flash[:notice] %></p>
     <% end %>
 
     <div class="mt-4 space-y-4">
-      <div class="field space-y-2">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      <div class="field">
+        <%= f.label :email, class: "form-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
       </div>
 
-      <div class="field space-y-2">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+      <div class="field">
+        <%= f.label :password, class: "form-label" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-input" %>
       </div>
 
       <div class="flex justify-between items-center text-xs">
-        <div class="flex items-center gap-2">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+        <div class="flex items-center">
+          <%= f.check_box :remember_me, class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" %>
+          <%= f.label :remember_me, class: "ms-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
         </div>
-        <%= link_to "Forgot password?", new_user_password_path %>
+        <%= link_to "Forgot password?", new_user_password_path, class: "ms-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
       </div>
     </div>
     <div class="flex flex-col items-center gap-2 mt-6 text-center">
       <%= f.submit "Log in", class: "btn-primary w-full" %>
-      <%= link_to "Register", new_user_registration_path, class: "btn-warning w-full" %>
+      <%= link_to "Register", new_user_registration_path, class: "btn-green w-full" %>
     </div>
   <% end %>
 </div>

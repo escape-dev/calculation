@@ -6,27 +6,43 @@
 
 @layer components {
   .card {
-    @apply p-4 rounded-xl;
+    @apply p-4 bg-white border border-gray-200 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700;
   }
 
   .btn {
-    @apply px-4 py-2 rounded-xl text-white
+    @apply px-4 py-2 rounded-xl text-white focus:outline-none;
   }
 
   .btn-primary {
-    @apply btn bg-blue-500;
+    @apply btn bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
   }
 
   .btn-warning {
-    @apply btn bg-orange-500
+    @apply btn bg-orange-500;
+  }
+
+  .btn-green {
+    @apply btn bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium text-sm dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800;
   }
 
   .btn-danger {
-    @apply btn bg-red-500
+    @apply btn bg-red-500;
   }
 
   .form-control {
     @apply w-full border-slate-500 rounded-xl;
+  }
+
+  .form-input {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+  }
+
+  .form-label {
+    @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+  }
+
+  .form-error {
+    @apply mt-1 text-sm text-red-600 dark:text-red-500
   }
 }
 

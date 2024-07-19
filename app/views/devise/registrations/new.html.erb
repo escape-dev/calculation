@@ -3,27 +3,27 @@
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="mt-4 space-y-4">
-      <div class="field space-y-2">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control #{resource.errors[:email].any? ? 'border-red-500' : ''}" %>
+      <div class="field">
+        <%= f.label :email, class: "form-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input #{resource.errors[:email].any? ? 'border-red-500' : ''}" %>
         <% if resource.errors[:email].any? %>
-          <p class="text-sm text-red-500 mt-1"><%= resource.errors[:email].first %></p>
+          <p class="form-error"><%= resource.errors[:email].first %></p>
         <% end %>
       </div>
 
-      <div class="field space-y-2">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control #{resource.errors[:password].any? ? 'border-red-500' : ''}" %>
+      <div class="field">
+        <%= f.label :password, class: "form-label" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-input #{resource.errors[:password].any? ? 'border-red-500' : ''}" %>
         <% if resource.errors[:password].any? %>
-          <p class="text-sm text-red-500 mt-1"><%= resource.errors[:password].first %></p>
+          <p class="form-error"><%= resource.errors[:password].first %></p>
         <% end %>
       </div>
 
-      <div class="field space-y-2">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control #{resource.errors[:password_confirmation].any? ? 'border-red-500' : ''}" %>
+      <div class="field">
+        <%= f.label :password_confirmation, class:"form-label" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input #{resource.errors[:password_confirmation].any? ? 'border-red-500' : ''}" %>
         <% if resource.errors[:password_confirmation].any? %>
-          <p class="text-sm text-red-500 mt-1"><%= resource.errors[:password_confirmation].first %></p>
+          <p class="form-error"><%= resource.errors[:password_confirmation].first %></p>
         <% end %>
       </div>
     </div>
