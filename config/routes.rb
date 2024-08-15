@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   get "/home", to: "home#index", as: :homepage
+  
+  resources :categories, except: %i[ show ]
 end
